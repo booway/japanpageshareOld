@@ -1,4 +1,15 @@
 Japanpageshare::Application.routes.draw do
+  
+  resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
+
+  root     :to => 'home#home'
+  match '/contact', :to => 'home#contact'
+  match '/about',   :to => 'home#about'
+  match '/help',    :to => 'home#help'
+  match '/signin',      :to => 'sessions#new'
+  match '/login',       :to => 'sessions#login'
+  match '/signout',     :to => 'sessions#destroy'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
