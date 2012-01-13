@@ -1,0 +1,21 @@
+<h1>Listing event_members</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @event_members.each do |event_member| %>
+  <tr>
+    <td><%= link_to 'Show', event_member %></td>
+    <td><%= link_to 'Edit', edit_event_member_path(event_member) %></td>
+    <td><%= link_to 'Destroy', event_member, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Event member', new_event_member_path %>

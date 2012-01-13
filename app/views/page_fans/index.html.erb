@@ -1,0 +1,21 @@
+<h1>Listing page_fans</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @page_fans.each do |page_fan| %>
+  <tr>
+    <td><%= link_to 'Show', page_fan %></td>
+    <td><%= link_to 'Edit', edit_page_fan_path(page_fan) %></td>
+    <td><%= link_to 'Destroy', page_fan, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Page fan', new_page_fan_path %>

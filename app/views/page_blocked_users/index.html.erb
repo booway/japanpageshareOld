@@ -1,0 +1,21 @@
+<h1>Listing page_blocked_users</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @page_blocked_users.each do |page_blocked_user| %>
+  <tr>
+    <td><%= link_to 'Show', page_blocked_user %></td>
+    <td><%= link_to 'Edit', edit_page_blocked_user_path(page_blocked_user) %></td>
+    <td><%= link_to 'Destroy', page_blocked_user, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Page blocked user', new_page_blocked_user_path %>

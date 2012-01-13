@@ -1,0 +1,374 @@
+ <% if signed_in? %>
+ 	<div class="leftSidebar">
+ 		<div id=>
+ 		<%= gravatar_for @user %>
+			<%= @user.name %>
+ 		 </div>
+   	     	<div class="box boxSidebarGray">
+   	     		<div class="boxHeader">
+   	     			<div>
+ 						<a href="/"><h3>Favorites</h3> </a>
+					</div>
+   	     		</div>
+   	     		<div class="boxContent">
+   	     			<div class="toolbar_menu">
+		 			  <ul>
+					 	<li><%= link_to "News feed", root_path %></li>
+					 	<li><%= link_to "Messages",  messages_path %> </li>
+						<li><%= link_to "Events",    events_path %> </li>
+						<li><%= link_to "Groups",    groups_path %> </li>
+						<li><%= link_to "Pages",     bpages_path %> </li>
+				      </ul>
+				      </div>
+   	     		    </div>
+   	     	   </div>
+   	     	<div class="box boxSidebarGray">
+   	     		<div class="boxHeader">
+   	     			<div>
+ 						<a href="/"><h3>Friends(<%=@user.friendships.count%>)</h3> </a>
+					</div>
+   	     		</div>
+   	     		<div class="boxContent">
+   	     			<ul>
+   	     			<% for friendship in @user.friendships %>
+ 								<a>
+ 								<li>
+ 									<%=h friendship.friend.name%>
+ 									(<%= link_to "remove", friendship , :method => :delete%>)
+ 								</li>
+ 					<%end%>
+ 					</ul>
+   	     		</div>
+   	     	</div>
+    </div>	
+ 	<div class="contentRight">
+ 			<div class="box boxRed">
+    			<div class="boxHeader">
+    				<div>
+ 						<a href="/"><h3>FEEDS</h3></a>
+					</div>
+    			</div>
+    			<div class="boxContent" style="padding: 1px;">
+				Nevtersen
+	<%= current_user.name %>
+				</div>
+			</div>
+    </div>	
+ 	<div class="rightSidebar">
+ 			<div class="box boxSidebarGray">
+   	     		<div class="boxHeader">
+   	     			<div>
+ 						<a href="/"><h3>Recomended</h3> </a>
+					</div>
+   	     		</div>
+   	     		<div class="boxContent">
+   	     			CONTENT CONTENT CONTENT CONTENT
+   	     		</div>
+   	     	</div>
+   	     	<div class="box boxSidebarGray">
+   	     		<div class="boxHeader">
+   	     			<div>
+ 						<a href="/"><h3>CAMPAIGN</h3> </a>
+					</div>
+   	     		</div>
+   	     		<div class="boxContent">
+   	     			CONTENT CONTENT CONTENT CONTENT
+   	     		</div>
+   	     	</div>
+   	     	<div class="box boxSidebarGray">
+   	     		<div class="boxHeader">
+   	     			<div>
+ 						<a href="/"><h3>EVENT</h3> </a>
+					</div>
+   	     		</div>
+   	     		<div class="boxContent">
+   	     			CONTENT CONTENT CONTENT CONTENT
+   	     		</div>
+   	     	</div>
+    </div>		
+	<% else %>
+	<div class="contentCenter">
+    		<div class="box boxRed">
+    			<div class="boxHeader">
+    				<div>
+ 						<a href="/"><h3>注目</h3></a>
+					</div>
+    			</div>
+    			<div class="boxContent" style="padding: 1px;">
+					<div class="mainContent">
+						<script type="text/javascript">
+							$().ready(function() {
+								$('.jimgMenu ul').kwicks({max: 310, duration: 300, easing: 'easeOutQuad'});
+								});
+						</script>
+				    	<div class="jimgMenu">
+						  <ul>
+							    <li id="landscapes"><a href="#">Landscapes</a></li>
+							    <li id="people"><a href="#">People</a></li>
+							    <li id="nature"><a href="#">Nature</a></li>
+							    <li id="abstract"><a href="#">Abstract</a></li>
+							    <li id="urban"><a href="#">Urban</a></li>
+						  </ul>
+					    </div>
+					</div>
+					<div id="mainContentRight">
+						<div class="boxHeader">
+    						<div>
+ 								<a href="/"><h3>ニュース</h3> </a>
+							</div>
+    					</div>
+						<li>
+							<a href="/">タイトルタイトルタイトル</a>
+							(2011.11.11)
+						</li>
+						<li>
+							<a href="/">タイトルタイトルタイトル</a>
+							(2011.11.11)
+						</li>
+						<li>
+							<a href="/">タイトルタイトルタイトル</a>
+							(2011.11.11)
+						</li>
+						<li>
+							<a href="/">タイトルタイトルタイトル</a>
+							(2011.11.11)
+						</li>
+					</div>
+					<div class="clear"></div>
+    			<div class="boxHeader">
+    				<div>
+ 				    	<a href="/"><h3>特集</h3></a>
+					</div>
+    			</div>
+    			<div class="mainContent">
+    				
+    				</div>
+    				<div class="clear"></div>
+    			<div class="boxHeader">
+    				<div>
+ 						<a href="/"><h3>Photo of the Day</h3> </a>
+					</div>
+    			</div>
+    		<table class="pageGrid"cellpadding="0" cellspacing="0">
+    			<tbody>
+    				<tr>
+    					<td class="tdleft">
+    						<div class="dayPic">
+    							<a>
+									<img alt="INI LLC" src="/images/pages/ini.jpg">
+								</a>
+    						</div>
+    					</td>
+    					<td class="tdleft">
+    						<div class="dayPic">
+    							<a>
+									<img alt="INI LLC" src="/images/pages/ini.jpg">
+								</a>
+    						</div>
+    					</td>
+    					<td class="tdleft">
+    						<div class="dayPic">
+    							<a>
+									<img alt="INI LLC" src="/images/pages/ini.jpg">
+								</a>
+    						</div>
+    					</td>
+    				</tr>
+    			</tbody>
+    			</table> 
+    		
+    			<div class="boxHeader">
+    				<div>
+ 						<a href="/"><h3>カテゴリーページ</h3> </a>
+					</div>
+    			</div>
+    			<table class="pageGrid" cellpadding="0" cellspacing="0">
+    				<tbody>
+    					<tr>
+    						<td class="tdleft"> 
+    							<div class="pagePic">
+    							<a>
+									<img class="page_browser_profile_pic" alt="INI LLC" src="/images/pages/ini.jpg">
+								</a>
+    							</div>
+    							<div class="pageDesc">
+    								<a href="/">INI</a></br>
+    								カテゴリーページ</br>
+    								カテゴリーページ
+    							</div>
+    						</td>
+    						<td class="tdleft"> 
+    							<div class="pagePic">
+    							<a>
+									<img class="page_browser_profile_pic" alt="INI LLC" src="/images/pages/dalai_lama.jpg">
+								</a>
+    							</div>
+    							<div class="pageDesc">
+    								<a href="/">Dalai lama</a></br>
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリ.....
+    							</div>
+    						</td>
+    						<td class="tdleft"> 
+    							<div class="pagePic">
+    							<a>
+									<img class="page_browser_profile_pic" alt="INI LLC" src="/images/pages/asoshoryu.jpg">
+								</a>
+    							</div>
+    							<div class="pageDesc">
+    								<a href="/">Asashoryu</a></br>
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリ.....
+    							</div>
+    						</td>
+    					</tr>
+    					<tr>
+    						<td class="tdleft"> 
+    							<div class="pagePic">
+    							<a>
+									<img class="page_browser_profile_pic" alt="INI LLC" src="/images/pages/coca.jpg">
+								</a>
+    							</div>
+    							<div class="pageDesc">
+    								<a href="/">Coca cola</a></br>
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリ.....
+    							</div>
+    						</td>
+    						<td class="tdleft"> 
+    							<div class="pagePic">
+    							<a>
+									<img class="page_browser_profile_pic" alt="INI LLC" src="/images/pages/handm.jpg">
+								</a>
+    							</div>
+    							<div class="pageDesc">
+    								<a href="/">H&M</a></br>
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリ.....
+    							</div>
+    						</td>
+    						<td class="tdleft"> 
+    							<div class="pagePic">
+    							<a>
+									<img class="page_browser_profile_pic" alt="INI LLC" src="/images/pages/mongol.jpg">
+								</a>
+    							</div>
+    							<div class="pageDesc">
+    								<a href="/">Mongol</a></br>
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリ.....
+    							</div>
+    						</td>
+    					</tr>
+    					<tr>
+    						<td class="tdleft"> 
+    							<div class="pagePic">
+    							<a>
+									<img class="page_browser_profile_pic" alt="INI LLC" src="/images/pages/nba.jpg">
+								</a>
+    							</div>
+    							<div class="pageDesc">
+    								<a href="/">NBA</a></br>
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリ.....
+    							</div>
+    						</td>
+    						<td class="tdleft"> 
+    							<div class="pagePic">
+    							<a>
+									<img class="page_browser_profile_pic" alt="INI LLC" src="/images/pages/oyu.jpg">
+								</a>
+    							</div>
+    							<div class="pageDesc">
+    								<a href="/">Oyu tolgoi</a></br>
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリ.....
+    							</div>
+    						</td>
+    						<td class="tdleft"> 
+    							<div class="pagePic">
+    							<a>
+									<img class="page_browser_profile_pic" alt="INI LLC" src="/images/pages/onepeace.jpg">
+								</a>
+    							</div>
+    							<div class="pageDesc">
+    								<a href="/">One Peace</a></br>
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリーページ
+    								カテゴリ.....
+    							</div>
+    						</td>
+    					</tr>
+    				</tbody>	    				
+    			</table>
+    			</div>
+			</div>
+         </div><!--end of #contentRight-->
+    
+     	<div class="rightSidebar">
+     		<a target="_blank" href="http://jin.jcic.or.jp/hotel/hotel-en.html">
+				<img  width="240" height="170" alt="Hotel Reservations" src="/images/220x170-EN.gif">
+            </a>
+   	     		<div class="box boxSidebarGray">
+   	     			<div class="boxHeader">
+   	     				<div>
+ 							<a href="/"><h3>Exchange Rate</h3> </a>
+						</div>
+   	     			</div>
+   	     			<div class="boxContent">
+   	     				CONTENT CONTENT CONTENT CONTENT
+   	     			</div>
+   	     		</div>
+   	     		<div class="box boxSidebarGray">
+   	     			<div class="boxHeader">
+   	     				<div>
+ 							<a href="/"><h3>Calculate Exchange Rate</h3> </a>
+						</div>
+   	     			</div>
+   	     			<div class="boxContent">
+   	     				CONTENT CONTENT CONTENT CONTENT
+   	     			</div>
+   	     		</div>
+   	     		<div class="box boxSidebarGray">
+   	     			<div class="boxHeader">
+   	     				<div>
+ 							<a href="/"><h3>Schedule</h3> </a>
+						</div>
+   	     			</div>
+   	     			<div class="boxContent">
+   	     				CONTENT CONTENT CONTENT CONTENT
+   	     			</div>
+   	     		</div>
+         </div>
+<% end %>

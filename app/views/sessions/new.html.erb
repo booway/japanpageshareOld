@@ -1,0 +1,28 @@
+<div class="contentRight">
+	<div class="box boxRed">
+    			<div class="boxHeader">
+    				<div>
+ 						<h3>ログイン</h3></a>
+					</div>
+    			</div>
+       <div class="boxContent" style="padding: 1px;">
+       	
+				Please re-enter your password
+				The password you entered is incorrect. Please try again (make sure your caps lock is off).
+			<%= form_for(:session, :url => sessions_path) do |f| %>
+ 			 <div class="field">
+  				  <%= f.label :email %>
+  				  <%= f.text_field :email%>
+ 			 </div>
+ 			 <div class="field">
+  				  <%= f.label :password %>
+  				  <%= f.password_field :password%>
+  			</div>
+  			<div class="actions">
+    			  <%= f.submit "Sign in" %>
+  			</div>
+			<% end %>
+				<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+	   </div>
+	</div>
+</div>
