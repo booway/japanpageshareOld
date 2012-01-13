@@ -1,5 +1,31 @@
 Japanpageshare::Application.routes.draw do
   
+  resources :settings
+
+  resources :searches
+
+  resources :notifications
+
+  resources :messages
+
+  resources :invitations
+
+  resources :campaign_members
+
+  resources :comments
+
+  resources :friend_requests
+
+  resources :event_members
+
+  resources :page_fans
+
+  resources :page_blocked_users
+
+  resources :pages
+
+  resources :friendships
+
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
 
@@ -10,6 +36,7 @@ Japanpageshare::Application.routes.draw do
   match '/signin',      :to => 'sessions#new'
   match '/login',       :to => 'sessions#login'
   match '/signout',     :to => 'sessions#destroy'
+  match '/signup',      :to => 'users#new'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
