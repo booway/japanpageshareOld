@@ -1,21 +1,21 @@
 Japanpageshare::Application.routes.draw do
   
   resources :settings
-
+  
   resources :searches
-
+  
   resources :notifications
-
+  
   resources :messages
-
+    
   resources :invitations
-
+  
   resources :campaign_members
-
+  
   resources :comments
-
+  
   resources :friend_requests
-
+  
   resources :event_members
 
   resources :page_fans
@@ -29,7 +29,8 @@ Japanpageshare::Application.routes.draw do
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
 
-  root     :to => 'home#home'
+           root     :to => 'home#public'
+  match '/home',    :to => 'home#home'
   match '/contact', :to => 'home#contact'
   match '/about',   :to => 'home#about'
   match '/help',    :to => 'home#help'
@@ -39,7 +40,6 @@ Japanpageshare::Application.routes.draw do
   match '/signup',      :to => 'users#new'
   # The priority is based upon order of creation:
   # first created -> highest priority.
-
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
